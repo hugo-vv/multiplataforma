@@ -2,7 +2,7 @@ const router = require('express').Router();
 const passport = require('passport');
 
 router.get('/', (req, res, next) => {
-    res.render('index');
+    res.render('index'); /*manejador de peticiones*/
 });
 
 router.get('/index', (req, res, next) => {
@@ -23,7 +23,7 @@ router.get('/principal', (req, res, next) => {
     res.render('index');
 });
 
-router.get('/signup', (req, res, next) => {
+router.get('/signup', (req, res, next) => { /*signup para que el usuario se registre*/
     res.render('signup');
 });
 
@@ -33,7 +33,7 @@ router.post('/signup', passport.authenticate('local-signup', {
     passReqToCallback: true
 }));
 
-router.get('/signin', (req, res, next) => {
+router.get('/signin', (req, res, next) => { /*El usuario inserta sus datos*/
     res.render('signin');
 });
 
